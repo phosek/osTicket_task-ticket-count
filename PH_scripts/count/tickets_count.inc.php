@@ -1,6 +1,6 @@
 <?php
 $ph_count_tickets = 0;
-if (!is_null($thisstaff->getId()))
+if (!is_null($thisstaff))
 {
 	$ph_staff_id = $thisstaff->getId();
 	$spojeni = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
