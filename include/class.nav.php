@@ -14,6 +14,8 @@
     vim: expandtab sw=4 ts=4 sts=4:
 **********************************************************************/
 require_once(INCLUDE_DIR.'class.app.php');
+include	(INCLUDE_DIR.'../PH_scripts/count/tickets_count.inc.php');
+include	(INCLUDE_DIR.'../PH_scripts/count/tasks_count.inc.php');
 
 class StaffNav {
 
@@ -135,8 +137,8 @@ class StaffNav {
                     'desc' => __('Users'), 'href' => 'users.php', 'title' => __('User Directory')
                 );
             }
-            $this->tabs['tasks'] = array('desc'=>__('Tasks'), 'href'=>'tasks.php', 'title'=>__('Task Queue'));
-            $this->tabs['tickets'] = array('desc'=>__('Tickets'),'href'=>'tickets.php','title'=>__('Ticket Queue'));
+            $this->tabs['tasks'] = array('desc'=>__('Tasks')." (".ph_count_tasks.")", 'href'=>'tasks.php', 'title'=>__('Task Queue'));
+            $this->tabs['tickets'] = array('desc'=>__('Tickets')." (".ph_count_tickets.")",'href'=>'tickets.php','title'=>__('Ticket Queue'));
 
             $this->tabs['kbase'] = array('desc'=>__('Knowledgebase'),'href'=>'kb.php','title'=>__('Knowledgebase'));
             if (!is_null($this->getRegisteredApps()))
