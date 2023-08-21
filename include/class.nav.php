@@ -14,8 +14,11 @@
     vim: expandtab sw=4 ts=4 sts=4:
 **********************************************************************/
 require_once(INCLUDE_DIR.'class.app.php');
-include	(INCLUDE_DIR.'../PH_scripts/count/tickets_count.inc.php');
-include	(INCLUDE_DIR.'../PH_scripts/count/tasks_count.inc.php');
+if ($thisstaff)
+{
+	include	(INCLUDE_DIR.'../PH_scripts/count/tickets_count.inc.php');
+	include	(INCLUDE_DIR.'../PH_scripts/count/tasks_count.inc.php');
+}
 
 class StaffNav {
 
